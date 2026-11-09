@@ -142,6 +142,16 @@
     {
       "path": "images/lookbook/look-03.jpg",
       "prompt": "Use case: photorealistic-natural. Portrait 4:5 premium Korean minimalist daily uniform fashion editorial photograph for Tools for Daily. Adult model in cream heavy cotton hoodie, slate grey nylon cargo trousers, carrying an ecru sturdy canvas tote, standing beside warm grey concrete wall, relaxed candid pose, entire outfit visible. Soft directional window light, realistic cotton weave, nylon folds, canvas texture. Quiet understated boutique editorial with warm cream, taupe, greige and charcoal palette, matches cream silk hero and warm neutral apparel category photograph. Lower quarter subtle dark shadow for white HTML caption. No illustration, no CGI, no graphic text, no watermark."
+    },
+    {
+      "path": "images/detail/hoodie-fabric.jpg",
+      "prompt": "Use case: product-mockup. Input image is the exact cream heavyweight cotton hoodie reference, not an edit target. Generate one square photorealistic macro editorial product photograph of this same garment: a close detail of its 500gsm dense cream cotton sweatshirt surface, double stitched kangaroo pocket edge and a naturally folded section of ribbed cuff. True cotton loops and fine fibers, convincing dense fabric, soft natural folds, accurate creamy ivory color. Warm greige background, gentle directional window light and soft taupe shadows matching the reference photo. Single camera composition, no collage. No illustration, no CGI, no text, no watermark, no labels.",
+      "reference": "images/product/p02.jpg"
+    },
+    {
+      "path": "images/detail/hoodie-drawstring.jpg",
+      "prompt": "Use case: product-mockup. Input image is the exact cream heavyweight cotton hoodie reference, not an edit target. Generate one square photorealistic close-up product photograph of the neckline and hood of this same hoodie. Faithfully match cream fabric, hood construction, two matching cream round cotton drawstrings and small silver metal aglet tips from the reference. Lay neckline naturally across a warm greige studio surface; show stitching, real dense cotton texture and natural drape in sharp tactile detail, soft directional daylight and taupe shadows, restrained luxury minimalist editorial photography. Single camera composition. No model needed. No illustration, no CGI, no text, no watermark.",
+      "reference": "images/product/p02.jpg"
     }
   ]
 }

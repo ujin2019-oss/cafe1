@@ -292,7 +292,37 @@ section{margin-top:var(--section-gap)}
 
 /* DETAIL 탭 */
 .detail-img{max-width:800px;margin:0 auto}
-.detail-img img{width:100%;border-radius:var(--radius)}
+.detail-img img{width:100%;height:auto;border-radius:var(--radius)}
+.detail-editorial{background:#F1EEE8;padding:56px 32px;border-radius:var(--radius)}
+.detail-intro{text-align:center;margin-bottom:36px}
+.detail-intro .eyebrow{font-family:var(--font-en);font-size:12px;letter-spacing:.3em;color:var(--sub);margin-bottom:16px}
+.detail-intro h2{font-family:var(--font-en);font-size:clamp(24px,4vw,40px);font-weight:800;line-height:1.15}
+.detail-intro p{color:var(--sub);line-height:1.8;margin-top:14px}
+.detail-intro::after{content:"";display:block;width:60px;height:3px;background:var(--point);margin:24px auto 0}
+.detail-section{margin-top:52px}
+.detail-section h3{font-family:var(--font-en);font-size:18px;font-weight:800;letter-spacing:.03em;margin-bottom:22px}
+.detail-section p,.detail-features{font-size:14px;line-height:1.9;color:var(--sub)}
+.detail-features{margin-top:18px}
+.detail-features li::before{content:"•";color:var(--point);margin-right:10px}
+.detail-wearing{margin-top:28px}
+.detail-closeups{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.detail-closeups figcaption{font-size:12px;line-height:1.8;color:var(--sub);margin-top:12px}
+.detail-closeups figcaption b{display:block;color:var(--main);font-size:13px;margin-bottom:4px}
+.detail-size{width:100%;border-collapse:collapse;font-size:13px;text-align:center}
+.detail-size caption{text-align:left;font-size:12px;color:var(--sub);margin-bottom:12px}
+.detail-size th,.detail-size td{padding:14px 8px;border-bottom:1px solid var(--line)}
+.detail-size thead{background:var(--main);color:#fff}
+.detail-size tbody tr:nth-child(even){background:rgba(138,132,120,.07)}
+.detail-section .detail-note{font-size:12px;margin-top:14px}
+.detail-care{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:center}
+.detail-care li{font-size:12px;line-height:1.7;color:var(--sub);padding:18px 4px;border-top:1px solid var(--line)}
+.detail-care i{display:block;font-size:24px;color:var(--main);margin-bottom:14px}
+@media(max-width:560px){
+  .detail-editorial{padding:36px 18px}
+  .detail-closeups{grid-template-columns:1fr;gap:28px}
+  .detail-care{grid-template-columns:repeat(2,1fr)}
+  .detail-size th,.detail-size td{padding:12px 4px}
+}
 .assure-box{max-width:800px;margin:28px auto 0;padding:26px 28px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);font-size:14px;line-height:1.85;color:var(--sub)}
 .assure-box b{color:var(--main)}
 .assure-box i{color:var(--point);margin-right:8px}
@@ -374,10 +404,10 @@ section{margin-top:var(--section-gap)}
       <button class="nav-close" type="button" aria-label="메뉴 닫기"><i class="fa-solid fa-xmark"></i></button>
       <ul>
         <li><a href="products.html">SHOP ALL</a></li>
-        <li><a href="products.html">APPAREL</a></li>
-        <li><a href="products.html">JEWELRY</a></li>
-        <li><a href="products.html">BAGS</a></li>
-        <li><a href="products.html">ACC</a></li>
+        <li><a href="products.html?category=apparel">APPAREL</a></li>
+        <li><a href="products.html?category=jewelry">JEWELRY</a></li>
+        <li><a href="products.html?category=bags">BAGS</a></li>
+        <li><a href="products.html?category=acc">ACC</a></li>
         <li><a href="board-notice.html">NOTICE</a></li>
         <li><a href="board-qna.html">Q&amp;A</a></li>
       </ul>
@@ -392,7 +422,7 @@ section{margin-top:var(--section-gap)}
 
 <!-- ▒▒▒▒▒▒▒▒▒▒ 브레드크럼 ▒▒▒▒▒▒▒▒▒▒ -->
 <div class="page-head reveal">
-  <p class="crumb"><a href="index.html">HOME</a> / <a href="products.html">SHOP</a> / <a href="products.html">APPAREL</a></p>
+  <p class="crumb"><a href="index.html">HOME</a> / <a href="products.html">SHOP</a> / <a href="products.html?category=apparel">APPAREL</a></p>
 </div>
 
 <!-- ▒▒▒▒▒▒▒▒▒▒ 상품 상세 : 갤러리 + 구매정보 ▒▒▒▒▒▒▒▒▒▒ -->
@@ -493,8 +523,60 @@ section{margin-top:var(--section-gap)}
 
     <!-- DETAIL -->
     <div class="tab-panel on" id="tab-detail">
-      <div class="detail-img">
-        <img src="images/detail/detail-hoodie.jpg" alt="헤비웨이트 후드 스웨트셔츠 상세 설명 이미지">
+      <div class="detail-img detail-editorial">
+        <div class="detail-intro">
+          <p class="eyebrow">MONO ARCHIVE</p>
+          <h2>HEAVYWEIGHT HOODIE</h2>
+          <p>500gsm 헤비웨이트 코튼 후드 스웨트셔츠</p>
+        </div>
+        <img src="images/product/p02.jpg" alt="크림 헤비웨이트 후드의 실제 원단 주름과 오버사이즈 실루엣을 보여주는 제품컷" width="1000" height="1000" loading="lazy">
+        <div class="detail-section">
+          <h3>01 STRUCTURE &amp; WEIGHT</h3>
+          <p>한 번의 세탁에도 무너지지 않는 밀도.<br>16수 2합 원사를 고밀도로 짜 넣은 500gsm 헤비웨이트 코튼이<br>몸의 실루엣을 무겁게, 그러나 단정하게 잡아줍니다.</p>
+          <ul class="detail-features">
+            <li>코튼 100% · 500gsm 헤비웨이트 원단</li>
+            <li>드롭 숄더 절개와 사이드 무봉제 패널</li>
+            <li>립 부위 스판 혼용 — 늘어짐 복원력 유지</li>
+            <li>프리워싱 가공, 수축률 3% 이내</li>
+          </ul>
+          <img class="detail-wearing" src="images/product/p02-b.jpg" alt="크림 헤비웨이트 후드 스웨트셔츠의 여유로운 핏을 보여주는 모델 착용컷" width="1000" height="1000" loading="lazy">
+        </div>
+        <div class="detail-section">
+          <h3>02 DETAILS</h3>
+          <div class="detail-closeups">
+            <figure>
+              <img src="images/detail/hoodie-fabric.jpg" alt="크림 코튼 원단 조직과 포켓 봉제 및 소매 립 클로즈업" width="1000" height="1000" loading="lazy">
+              <figcaption><b>DETAIL 01 — 원단 조직</b>고밀도 원단 표면과 촘촘한 봉제를 가까이에서 확인하세요.</figcaption>
+            </figure>
+            <figure>
+              <img src="images/detail/hoodie-drawstring.jpg" alt="크림 후드 네크라인과 코튼 드로스트링 및 메탈 팁 클로즈업" width="1000" height="1000" loading="lazy">
+              <figcaption><b>DETAIL 02 — 드로스트링</b>크림 컬러 코튼 코드와 메탈 팁 마감.</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="detail-section">
+          <h3>03 SIZE GUIDE</h3>
+          <table class="detail-size">
+            <caption>사이즈별 단면 실측 (단위: cm)</caption>
+            <thead><tr><th scope="col">SIZE</th><th scope="col">총장</th><th scope="col">어깨</th><th scope="col">가슴</th><th scope="col">소매</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">S</th><td>69</td><td>58</td><td>62</td><td>60</td></tr>
+              <tr><th scope="row">M</th><td>71</td><td>60</td><td>64</td><td>61</td></tr>
+              <tr><th scope="row">L</th><td>73</td><td>62</td><td>66</td><td>62</td></tr>
+              <tr><th scope="row">XL</th><td>75</td><td>64</td><td>68</td><td>63</td></tr>
+            </tbody>
+          </table>
+          <p class="detail-note">* 단면 측정 기준이며, 측정 방법에 따라 1–3cm 오차가 있을 수 있습니다.</p>
+        </div>
+        <div class="detail-section">
+          <h3>04 CARE</h3>
+          <ul class="detail-care">
+            <li><i class="fa-solid fa-water" aria-hidden="true"></i>30°C 중성세제</li>
+            <li><i class="fa-solid fa-ban" aria-hidden="true"></i>표백 금지</li>
+            <li><i class="fa-solid fa-temperature-low" aria-hidden="true"></i>낮은 온도 다림질</li>
+            <li><i class="fa-solid fa-ban" aria-hidden="true"></i>건조기 금지</li>
+          </ul>
+        </div>
       </div>
       <div class="assure-box">
         <p><i class="fa-solid fa-circle-check"></i><b>MONO ARCHIVE 품질 보증.</b> 모든 제품은 출고 전 2회 검수를 거치며,
@@ -707,9 +789,10 @@ section{margin-top:var(--section-gap)}
       <h4>SHOP</h4>
       <ul>
         <li><a href="products.html">Shop All</a></li>
-        <li><a href="products.html">Apparel</a></li>
-        <li><a href="products.html">Jewelry</a></li>
-        <li><a href="products.html">Bags / Acc</a></li>
+        <li><a href="products.html?category=apparel">Apparel</a></li>
+        <li><a href="products.html?category=jewelry">Jewelry</a></li>
+        <li><a href="products.html?category=bags">Bags</a></li>
+        <li><a href="products.html?category=acc">Acc</a></li>
       </ul>
     </div>
     <div>

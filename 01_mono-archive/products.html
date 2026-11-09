@@ -263,6 +263,9 @@ section{margin-top:var(--section-gap)}
   .sort-bar{flex-direction:row;flex-wrap:wrap;gap:12px}
   .sort-select select{padding:10px 38px 10px 14px;font-size:12px}
 }
+.prod-grid > .item[hidden]{display:none}
+.main-nav a[aria-current="page"]{color:var(--point)}
+.main-nav a[aria-current="page"]::after{width:100%}
 </style>
 </head>
 <body>
@@ -277,10 +280,10 @@ section{margin-top:var(--section-gap)}
       <button class="nav-close" type="button" aria-label="메뉴 닫기"><i class="fa-solid fa-xmark"></i></button>
       <ul>
         <li><a href="products.html">SHOP ALL</a></li>
-        <li><a href="products.html">APPAREL</a></li>
-        <li><a href="products.html">JEWELRY</a></li>
-        <li><a href="products.html">BAGS</a></li>
-        <li><a href="products.html">ACC</a></li>
+        <li><a href="products.html?category=apparel">APPAREL</a></li>
+        <li><a href="products.html?category=jewelry">JEWELRY</a></li>
+        <li><a href="products.html?category=bags">BAGS</a></li>
+        <li><a href="products.html?category=acc">ACC</a></li>
         <li><a href="board-notice.html">NOTICE</a></li>
         <li><a href="board-qna.html">Q&amp;A</a></li>
       </ul>
@@ -294,7 +297,7 @@ section{margin-top:var(--section-gap)}
 </header>
 
 <!-- ▒▒▒▒▒▒▒▒▒▒ PAGE HEAD ▒▒▒▒▒▒▒▒▒▒ -->
-<div class="page-head reveal"><p class="crumb"><a href="index.html">HOME</a> / SHOP</p><h1>SHOP ALL</h1><p class="kr">열여섯 가지 아카이브 — 전 상품</p></div>
+<div class="page-head reveal"><p class="crumb"><a href="index.html">HOME</a> / <span class="crumb-current">SHOP ALL</span></p><h1>SHOP ALL</h1><p class="kr">열여섯 가지 아카이브 — 전 상품</p></div>
 
 <!-- ▒▒▒▒▒▒▒▒▒▒ 상품 목록 ▒▒▒▒▒▒▒▒▒▒ -->
 <div class="container">
@@ -303,10 +306,10 @@ section{margin-top:var(--section-gap)}
   <div class="filter-tabs reveal">
     <ul>
       <li><a class="active" href="products.html">ALL</a></li>
-      <li><a href="products.html">APPAREL</a></li>
-      <li><a href="products.html">JEWELRY</a></li>
-      <li><a href="products.html">BAGS</a></li>
-      <li><a href="products.html">HEADWEAR</a></li>
+      <li><a href="products.html?category=apparel">APPAREL</a></li>
+      <li><a href="products.html?category=jewelry">JEWELRY</a></li>
+      <li><a href="products.html?category=bags">BAGS</a></li>
+      <li><a href="products.html?category=acc">ACC</a></li>
     </ul>
   </div>
 
@@ -327,7 +330,7 @@ section{margin-top:var(--section-gap)}
 
   <!-- 상품 그리드 (16) -->
   <ul class="prod-grid">
-    <li class="item reveal">
+    <li class="item reveal" data-category="apparel">
       <a href="product-detail.html">
         <div class="thumb">
           <span class="badges"><span class="badge sale">-15%</span></span>
@@ -342,7 +345,7 @@ section{margin-top:var(--section-gap)}
         </div>
       </a>
     </li>
-    <li class="item reveal d1">
+    <li class="item reveal d1" data-category="apparel">
       <a href="product-detail.html">
         <div class="thumb">
           <span class="badges"><span class="badge new">NEW</span></span>
@@ -357,7 +360,7 @@ section{margin-top:var(--section-gap)}
         </div>
       </a>
     </li>
-    <li class="item reveal d2">
+    <li class="item reveal d2" data-category="apparel">
       <a href="product-detail.html">
         <div class="thumb">
           <span class="badges"><span class="badge sale">-14%</span></span>
@@ -372,7 +375,7 @@ section{margin-top:var(--section-gap)}
         </div>
       </a>
     </li>
-    <li class="item reveal d3">
+    <li class="item reveal d3" data-category="apparel">
       <a href="product-detail.html">
         <div class="thumb">
           <span class="badges"><span class="badge new">NEW</span></span>
@@ -387,7 +390,7 @@ section{margin-top:var(--section-gap)}
         </div>
       </a>
     </li>
-    <li class="item reveal">
+    <li class="item reveal" data-category="apparel">
       <a href="product-detail.html">
         <div class="thumb">
           <img src="images/product/p05.jpg" alt="와이드 스트레이트 데님">
@@ -401,7 +404,7 @@ section{margin-top:var(--section-gap)}
         </div>
       </a>
     </li>
-    <li class="item reveal d1">
+    <li class="item reveal d1" data-category="apparel">
       <a href="product-detail.html">
         <div class="thumb">
           <span class="badges"><span class="badge new">NEW</span></span>
@@ -416,7 +419,7 @@ section{margin-top:var(--section-gap)}
         </div>
       </a>
     </li>
-    <li class="item reveal d2">
+    <li class="item reveal d2" data-category="bags">
       <a href="product-detail.html">
         <div class="thumb">
           <span class="badges"><span class="badge new">NEW</span></span>
@@ -431,7 +434,7 @@ section{margin-top:var(--section-gap)}
         </div>
       </a>
     </li>
-    <li class="item reveal d3">
+    <li class="item reveal d3" data-category="bags">
       <a href="product-detail.html">
         <div class="thumb">
           <img src="images/product/p08.jpg" alt="캔버스 로고 토트백">
@@ -445,7 +448,7 @@ section{margin-top:var(--section-gap)}
         </div>
       </a>
     </li>
-    <li class="item reveal">
+    <li class="item reveal" data-category="acc">
       <a href="product-detail.html">
         <div class="thumb">
           <img src="images/product/p09.jpg" alt="워싱 코튼 볼캡">
@@ -459,7 +462,7 @@ section{margin-top:var(--section-gap)}
         </div>
       </a>
     </li>
-    <li class="item reveal d1">
+    <li class="item reveal d1" data-category="acc">
       <a href="product-detail.html">
         <div class="thumb">
           <span class="badges"><span class="badge new">NEW</span></span>
@@ -474,7 +477,7 @@ section{margin-top:var(--section-gap)}
         </div>
       </a>
     </li>
-    <li class="item reveal d2">
+    <li class="item reveal d2" data-category="jewelry">
       <a href="product-detail.html">
         <div class="thumb">
           <span class="badges"><span class="badge new">NEW</span></span>
@@ -489,7 +492,7 @@ section{margin-top:var(--section-gap)}
         </div>
       </a>
     </li>
-    <li class="item reveal d3">
+    <li class="item reveal d3" data-category="jewelry">
       <a href="product-detail.html">
         <div class="thumb">
           <img src="images/product/p12.jpg" alt="시그넷 링">
@@ -503,7 +506,7 @@ section{margin-top:var(--section-gap)}
         </div>
       </a>
     </li>
-    <li class="item reveal">
+    <li class="item reveal" data-category="jewelry">
       <a href="product-detail.html">
         <div class="thumb">
           <span class="badges"><span class="badge sale">-13%</span></span>
@@ -518,7 +521,7 @@ section{margin-top:var(--section-gap)}
         </div>
       </a>
     </li>
-    <li class="item reveal d1">
+    <li class="item reveal d1" data-category="jewelry">
       <a href="product-detail.html">
         <div class="thumb">
           <span class="badges"><span class="badge new">NEW</span></span>
@@ -533,7 +536,7 @@ section{margin-top:var(--section-gap)}
         </div>
       </a>
     </li>
-    <li class="item reveal d2">
+    <li class="item reveal d2" data-category="jewelry">
       <a href="product-detail.html">
         <div class="thumb">
           <span class="badges"><span class="badge new">NEW</span></span>
@@ -548,7 +551,7 @@ section{margin-top:var(--section-gap)}
         </div>
       </a>
     </li>
-    <li class="item reveal d3">
+    <li class="item reveal d3" data-category="jewelry">
       <a href="product-detail.html">
         <div class="thumb">
           <img src="images/product/p16.jpg" alt="오픈 커프 브레이슬릿">
@@ -566,10 +569,7 @@ section{margin-top:var(--section-gap)}
 
   <!-- 페이지네이션 -->
   <nav class="pagination reveal" aria-label="페이지 이동">
-    <a href="products.html" aria-label="이전 페이지"><i class="fa-solid fa-angles-left"></i></a>
     <a class="current" href="products.html" aria-current="page">1</a>
-    <a href="products.html">2</a>
-    <a href="products.html" aria-label="다음 페이지"><i class="fa-solid fa-angles-right"></i></a>
   </nav>
 
 </div>
@@ -588,9 +588,10 @@ section{margin-top:var(--section-gap)}
       <h4>SHOP</h4>
       <ul>
         <li><a href="products.html">Shop All</a></li>
-        <li><a href="products.html">Apparel</a></li>
-        <li><a href="products.html">Jewelry</a></li>
-        <li><a href="products.html">Bags / Acc</a></li>
+        <li><a href="products.html?category=apparel">Apparel</a></li>
+        <li><a href="products.html?category=jewelry">Jewelry</a></li>
+        <li><a href="products.html?category=bags">Bags</a></li>
+        <li><a href="products.html?category=acc">Acc</a></li>
       </ul>
     </div>
     <div>
@@ -621,6 +622,7 @@ section{margin-top:var(--section-gap)}
   </div>
 </footer>
 
+<script src="products-category.js"></script>
 <script>
 /* 스크롤 리빌 (IntersectionObserver) */
 var io = new IntersectionObserver(function (entries) {
