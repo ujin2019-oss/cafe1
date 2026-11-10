@@ -206,12 +206,13 @@ section{margin-top:var(--section-gap)}
 @media (max-width:900px){.look-wrap{grid-template-columns:1fr}}
 
 /* ============ 팝업 ============ */
+.popup-backdrop{position:fixed;inset:0;z-index:1199;background:rgba(36,38,40,.6);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .45s ease,visibility .45s ease}
+.popup-backdrop.show{opacity:1;visibility:visible;pointer-events:auto}
 .popup{position:fixed;z-index:1200;width:min(400px,calc(100vw - 40px));background:var(--surface);border-radius:var(--radius);overflow:hidden;box-shadow:0 30px 60px rgba(10,9,8,.35);opacity:0;pointer-events:none;transform:translateY(14px);transition:all .45s ease}
 .popup.show{opacity:1;pointer-events:auto;transform:translateY(0)}
-#popup1{left:36px;top:130px}
-#popup2{left:472px;top:130px}
-@media (max-width:960px){#popup2{display:none}}
-@media (max-width:560px){#popup1{left:50%;transform:translate(-50%,14px)}#popup1.show{transform:translate(-50%,0)}}
+#popup1{display:none}
+#popup2{left:50%;top:50%;transform:translate(-50%,calc(-50% + 14px))}
+#popup2.show{transform:translate(-50%,-50%)}
 .popup img{width:100%;height:auto}
 .popup .bar{display:flex;justify-content:space-between;align-items:center;background:var(--main);color:#C9C4BC;font-size:12px;padding:10px 14px}
 .popup .bar label{display:flex;gap:6px;align-items:center;cursor:pointer}
@@ -226,6 +227,7 @@ section{margin-top:var(--section-gap)}
 </style>
 </head>
 <body>
+<div class="popup-backdrop" id="popup-backdrop" aria-hidden="true"></div>
 
 <!-- ▒▒ 팝업 (400x300 x2) : 디자인 목업 — 노출 제어만 JS ▒▒ -->
 <div class="popup" id="popup1">
@@ -903,18 +905,22 @@ document.querySelector('.nav-close').addEventListener('click', function () { nav
 nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { nav.classList.remove('open'); }); });
 
 /* 팝업 : 오늘 하루 열지 않기 (localStorage) */
-['popup1', 'popup2'].forEach(function (id, i) {
+['popup2'].forEach(function (id, i) {
   var el = document.getElementById(id);
   if (!el) return;
   var today = new Date().toDateString();
   if (localStorage.getItem(id + '-hide') !== today) {
-    setTimeout(function () { el.classList.add('show'); }, 600 + i * 250);
+    setTimeout(function () {
+      document.getElementById('popup-backdrop').classList.add('show');
+      el.classList.add('show');
+    }, 600 + i * 250);
   }
   el.querySelector('[data-close]').addEventListener('click', function () {
     if (el.querySelector('input[type="checkbox"]').checked) {
       localStorage.setItem(id + '-hide', today);
     }
     el.classList.remove('show');
+    document.getElementById('popup-backdrop').classList.remove('show');
   });
 });
 </script>
