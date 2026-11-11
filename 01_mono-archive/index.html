@@ -224,6 +224,24 @@ section{margin-top:var(--section-gap)}
 .marquee .tape{display:inline-block;font-family:var(--font-en);font-weight:800;font-size:15px;letter-spacing:.18em;animation:tape 28s linear infinite}
 .marquee .tape i{color:var(--point);margin:0 26px;font-size:10px;vertical-align:middle}
 @keyframes tape{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* 좁은 모바일 화면에서 확인된 넘침·잘림만 보정 */
+@media (min-width:320px) and (max-width:430px){
+  .prod-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .item .price{flex-wrap:wrap}
+  .item .price > *{white-space:nowrap}
+  .item .name{-webkit-line-clamp:unset}
+  .badges{max-width:calc(100% - 60px);flex-wrap:wrap}
+  nav.main-nav{height:100dvh}
+  nav.main-nav .nav-close{display:block}
+}
+@media (min-width:320px) and (max-width:384px){
+  .hero-copy .btns{flex-wrap:wrap}
+  .hero-copy{padding-bottom:40px}
+  .hero-swiper .swiper-pagination{width:auto;left:var(--gutter)}
+  .cat-label{right:0;overflow-wrap:anywhere}
+  .sec-head{flex-wrap:wrap}
+}
 </style>
 </head>
 <body>
